@@ -14,7 +14,7 @@ const cors = require('cors');
 app.use(cors());
 dotenv.config();
 app.use(express.json());
-app.use("https://blogapi-yf21.onrender.com/api/images", express.static(path.join(__dirname, "https://blogapi-yf21.onrender.com/api/images")));
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true,
