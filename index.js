@@ -14,7 +14,7 @@ const cors = require('cors');
 app.use(cors());
 dotenv.config();
 app.use(express.json());
-app.use("/images", express.static(path.join(__dirname, "/images")));
+app.use("https://blogapi-yf21.onrender.com/api/images", express.static(path.join(__dirname, "https://blogapi-yf21.onrender.com/api/images")));
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true,
@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
   });
 
 const upload = multer({storage:storage});
-app.post("/api/upload", upload.single("file"),(req, res)=>{
+app.post("https://blogapi-yf21.onrender.com/api/upload", upload.single("file"),(req, res)=>{
     res.status(200).json("file have been uploaded");
 })
 
