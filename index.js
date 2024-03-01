@@ -11,8 +11,8 @@ const path = require("path");
 const cors = require('cors');
 
 
-app.use(cors());
 dotenv.config();
+app.use(cors());
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 

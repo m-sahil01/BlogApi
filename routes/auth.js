@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 // REGISTER
 
-router.post("/api/auth/register", async (req, res)=>{
+router.post("/api/routes/auth/register", async (req, res)=>{
     try{
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
@@ -23,7 +23,7 @@ catch(err){
 })
 
 //LOGIN
-router.post("/api/auth/login", async (req, res) => {
+router.post("/api/routes/auth/login", async (req, res) => {
     try {
       const user = await User.findOne({ username: req.body.username });
       if(!user){
